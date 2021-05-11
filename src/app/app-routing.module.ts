@@ -5,18 +5,31 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
+import { PagesComponent } from './pages/pages/pages.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 
 
 
 
 const routes: Routes = [
-  {path: 'dashboar',component : DashboardComponent },
+  
+  {
+    path: '',component : PagesComponent,
+    children:
+    [
+      {path: 'dashboar',component : DashboardComponent },
+      {path: 'progress',component : ProgressComponent },
+      {path: 'grafica1',component : Grafica1Component },
+      {path : '', redirectTo: '/dashboar',pathMatch: 'full'},
+
+    ]
+  },
+  
+
   {path: 'login',component : LoginComponent },
   {path: 'register',component : RegisterComponent },
-  {path: 'progress',component : ProgressComponent },
-  {path: 'grafica1',component : Grafica1Component },
-  {path : '', redirectTo: '/dashboar',pathMatch: 'full'},
+
+  
   {path : '**', component: NopagefoundComponent},
 ];
 
