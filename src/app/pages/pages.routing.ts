@@ -9,8 +9,7 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 
 
 const routes: Routes = [
-  //rutas hijas
-
+  //rutas hija dentro del componente pages
   {
     path: 'dashboar',component : PagesComponent,
     children:
@@ -18,8 +17,6 @@ const routes: Routes = [
       {path: '',component : DashboardComponent },
       {path: 'progress',component : ProgressComponent },
       {path: 'grafica1',component : Grafica1Component },
-
-
     ]
   },
 
